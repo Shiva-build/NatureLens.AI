@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NatureLens.ai – Identify plants, birds, insects and fungi from a photo</title>
+  <meta name="description" content="Take a photo of anything growing, flying or crawling. NatureLens tells you what it is and what to look for.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="#top" aria-label="NatureLens.ai home">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+      <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 7c5 4 6 10 0 18C10 17 11 11 16 7z" fill="currentColor"/>
+    </svg>
+    <span>NatureLens<span class="logo-ai">.ai</span></span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="#try">Try it</a>
+    <a href="#kinds">What it knows</a>
+    <a href="#how">How it works</a>
+    <a href="#log">Field log</a>
+  </nav>
+  <a class="btn btn-small" href="#try">Identify a photo</a>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Point at it.<br>Know what it is.</h1>
+      <p class="lead">Photograph a leaf, a feather, a beetle or a mushroom. NatureLens names it, shows you the features it used to decide, and tells you how sure it is.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#try">Identify a photo</a>
+        <a class="link" href="#how">See how it decides</a>
+      </div>
+      <p class="hero-note">Free to try. Photos stay in your browser in this demo.</p>
+    </div>
+
+    <figure class="plate" aria-label="Example identification of an oak leaf">
+      <svg viewBox="0 0 480 540" role="img" aria-labelledby="plate-title">
+        <title id="plate-title">An oak leaf inside a camera viewfinder with three labelled features</title>
+        <rect class="plate-bg" x="0" y="0" width="480" height="540" rx="20"/>
+        <!-- grid -->
+        <g class="plate-grid">
+          <line x1="160" y1="0" x2="160" y2="460"/><line x1="320" y1="0" x2="320" y2="460"/>
+          <line x1="0" y1="153" x2="480" y2="153"/><line x1="0" y1="306" x2="480" y2="306"/>
+        </g>
+        <!-- leaf -->
+        <g class="leaf">
+          <path d="M240 50 C262 62 268 82 284 90 C306 88 312 108 306 126 C330 130 338 150 330 170 C352 180 354 204 340 222 C358 238 354 262 336 276 C346 298 332 320 308 326 C310 352 292 372 268 374 C264 396 256 414 240 436 C224 414 216 396 212 374 C188 372 170 352 172 326 C148 320 134 298 144 276 C126 262 122 238 140 222 C126 204 128 180 150 170 C142 150 150 130 174 126 C168 108 174 88 196 90 C212 82 218 62 240 50 Z"/>
+          <path class="vein" d="M240 50 L240 436"/>
+          <g class="vein">
+            <path d="M240 130 L180 108"/><path d="M240 130 L300 108"/>
+            <path d="M240 190 L156 170"/><path d="M240 190 L324 170"/>
+            <path d="M240 250 L146 224"/><path d="M240 250 L334 224"/>
+            <path d="M240 310 L162 292"/><path d="M240 310 L318 292"/>
+            <path d="M240 360 L196 346"/><path d="M240 360 L284 346"/>
+          </g>
+        </g>
+        <!-- viewfinder corners -->
+        <g class="corners">
+          <path d="M28 70 V28 H70"/><path d="M410 28 H452 V70"/>
+          <path d="M452 400 V442 H410"/><path d="M70 442 H28 V400"/>
+        </g>
+        <!-- callouts -->
+        <g class="callout">
+          <path d="M334 224 L392 224 L392 190"/><circle cx="334" cy="224" r="4"/>
+          <text x="392" y="180" text-anchor="middle">Rounded lobes</text>
+        </g>
+        <g class="callout">
+          <path d="M146 224 L88 224 L88 262"/><circle cx="146" cy="224" r="4"/>
+          <text x="88" y="282" text-anchor="middle">Paired side veins</text>
+        </g>
+        <g class="callout">
+          <path d="M240 436 L240 466"/><circle cx="240" cy="436" r="4"/>
+        </g>
+        <!-- scan line -->
+        <rect class="scan" x="28" y="28" width="424" height="3" rx="1.5"/>
+        <!-- result -->
+        <g class="result-bar">
+          <rect x="28" y="468" width="424" height="52" rx="12"/>
+          <text x="48" y="491" class="r-name">Pedunculate oak</text>
+          <text x="48" y="509" class="r-latin">Quercus robur</text>
+          <text x="432" y="499" text-anchor="end" class="r-score">94%</text>
+        </g>
+      </svg>
+    </figure>
+  </section>
+
+  <!-- TRY IT -->
+  <section class="try" id="try">
+    <div class="section-head">
+      <h2>Try it with your own photo</h2>
+      <p>Pick what you're photographing, then add a picture. Clear, close-up shots with the subject filling the frame work best.</p>
+    </div>
+
+    <div class="tool">
+      <fieldset class="kinds-picker">
+        <legend>I'm photographing</legend>
+        <label><input type="radio" name="kind" value="any" checked><span>Not sure</span></label>
+        <label><input type="radio" name="kind" value="plant"><span>A plant</span></label>
+        <label><input type="radio" name="kind" value="bird"><span>A bird</span></label>
+        <label><input type="radio" name="kind" value="insect"><span>An insect</span></label>
+        <label><input type="radio" name="kind" value="fungus"><span>A fungus</span></label>
+      </fieldset>
+
+      <div class="stage">
+        <label class="drop" id="drop" for="file">
+          <input type="file" id="file" accept="image/*" capture="environment">
+          <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><rect x="5" y="12" width="38" height="28" rx="5" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="26" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M17 12l3-5h8l3 5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <strong>Drop a photo here, or tap to choose one</strong>
+          <span>JPG, PNG or WebP</span>
+        </label>
+
+        <div class="preview" id="preview" hidden>
+          <img id="previewImg" alt="Your uploaded photo">
+          <div class="scanner" id="scanner" aria-hidden="true"></div>
+        </div>
+
+        <div class="result" id="result" aria-live="polite" hidden></div>
+      </div>
+
+      <p class="demo-note">Demo mode: results come from a small built-in species list so you can see how the page behaves. Connect the <code>identify()</code> function in <code>script.js</code> to a real model or API for live identification.</p>
+    </div>
+  </section>
+
+  <!-- KINDS -->
+  <section class="kinds" id="kinds">
+    <div class="section-head">
+      <h2>Four groups, one camera</h2>
+      <p>Each group uses features that matter for that kind of living thing, so the explanation always matches what you photographed.</p>
+    </div>
+    <dl class="kind-list">
+      <div>
+        <dt>Plants and trees</dt>
+        <dd>Leaf shape, edge, vein pattern, flower structure, bark texture.</dd>
+      </div>
+      <div>
+        <dt>Birds</dt>
+        <dd>Beak shape, wing bars, tail length, eye ring, overall silhouette.</dd>
+      </div>
+      <div>
+        <dt>Insects and spiders</dt>
+        <dd>Wing count, antennae, leg joints, body segments, colour pattern.</dd>
+      </div>
+      <div>
+        <dt>Mushrooms and fungi</dt>
+        <dd>Cap surface, gill or pore layout, stem ring, colour changes.</dd>
+      </div>
+    </dl>
+    <p class="safety"><strong>Never eat a wild mushroom or plant based on an app.</strong> NatureLens is a learning aid. Check edible species with a local expert.</p>
+  </section>
+
+  <!-- HOW -->
+  <section class="how" id="how">
+    <div class="section-head">
+      <h2>How it decides</h2>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>Look</h3>
+        <p>The photo is cleaned up and the subject is separated from the background.</p>
+      </li>
+      <li>
+        <h3>Compare</h3>
+        <p>Visible features are matched against thousands of reference species, and the closest candidates are ranked.</p>
+      </li>
+      <li>
+        <h3>Explain</h3>
+        <p>You get the top match, the features that supported it, and lookalikes to rule out.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- FIELD LOG -->
+  <section class="log" id="log">
+    <div class="section-head">
+      <h2>Field log</h2>
+      <p>A few recent identifications from the community.</p>
+    </div>
+    <ul class="log-list">
+      <li><span class="log-name">Eurasian blue tit</span><span class="log-latin">Cyanistes caeruleus</span><span class="log-where">Garden feeder</span><span class="log-conf">97%</span></li>
+      <li><span class="log-name">Fly agaric</span><span class="log-latin">Amanita muscaria</span><span class="log-where">Birch woodland</span><span class="log-conf">95%</span></li>
+      <li><span class="log-name">Monarch butterfly</span><span class="log-latin">Danaus plexippus</span><span class="log-where">Meadow edge</span><span class="log-conf">98%</span></li>
+      <li><span class="log-name">Common dandelion</span><span class="log-latin">Taraxacum officinale</span><span class="log-where">Roadside verge</span><span class="log-conf">99%</span></li>
+      <li><span class="log-name">Peacock</span><span class="log-latin">Pavo cristatus</span><span class="log-where">Village fields</span><span class="log-conf">99%</span></li>
+    </ul>
+  </section>
+
+  <!-- CTA -->
+  <section class="closing">
+    <h2>Found something you can't name?</h2>
+    <a class="btn btn-light" href="#try">Identify a photo</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>© <span id="year">2026</span> NatureLens.ai</span>
+  <nav aria-label="Footer">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </nav>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
